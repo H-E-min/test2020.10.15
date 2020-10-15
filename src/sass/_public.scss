@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+//变量、数组、函数、宏定义(混合器)建议放到公共样式中
+//变量(!default设置默认值)
+$fontSize : 18px !default;
+$lineHeight:1.5;
+$borderDir:right;
+
+@mixin size ($width:100px,$height:100px){
+    width: $width;
+    height: $height;
+}
+@mixin position($position:relative,$top:0px,$right:0px,$bottom:0px,$left:0px){
+    position: $position;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+}
+
+$color:(aaa:blue,bbb:pink,ccc:red);
+@function fnColor($key){
+    @return map-get($color,$key);
+}
+$map1 :(aaa:red,bbb:pink);
+$map2:(aaa:blue,bbb:red,ccc:green);
+@function fnMerge($map,$map1){
+    @return map-merge($map,$map1);
+}

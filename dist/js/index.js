@@ -1,0 +1,1 @@
+var num=1;function sum(n,u){return n+u}
